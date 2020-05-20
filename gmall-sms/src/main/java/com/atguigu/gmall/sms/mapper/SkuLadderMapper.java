@@ -3,6 +3,7 @@ package com.atguigu.gmall.sms.mapper;
 import com.atguigu.gmall.sms.entity.SkuLadderEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * 商品阶梯价格
@@ -11,6 +12,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @email fengjin@atguigu.com
  * @date 2020-05-16 19:36:58
  */
+@Repository
 @Mapper
 public interface SkuLadderMapper extends BaseMapper<SkuLadderEntity> {
 	

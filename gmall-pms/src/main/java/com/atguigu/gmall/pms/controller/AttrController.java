@@ -35,6 +35,15 @@ public class AttrController {
     @Autowired
     private AttrService attrService;
 
+    @GetMapping("category/{cid}")
+    @ApiOperation("分类查询")
+    public ResponseVo<List<AttrEntity>> queryAttrsByCid(@PathVariable("cid")Long cid,
+                                                  @RequestParam(value = "type",required = false)Integer type,
+                                                  @RequestParam(value = "searchType", required = false) Integer searchType){
+        List<AttrEntity> attrEntities = attrService.queryAttrsByCid(cid, type, searchType);
+        return ResponseVo.ok(attrEntities);
+    }
+
 
     @GetMapping("group/{gid}")
     @ApiOperation("分页查询")
